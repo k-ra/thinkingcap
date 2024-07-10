@@ -14,6 +14,8 @@ struct LogView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
+        Spacer()
+        Text("daily thinking times:")
         NavigationView {
             List {
                 ForEach(Array(appState.dailyLog.keys.sorted().reversed()), id: \.self) { date in
@@ -21,7 +23,7 @@ struct LogView: View {
                         ForEach(appState.activities, id: \.self) { activity in
                             if let time = appState.dailyLog[date]?[activity], time > 0 {
                                 HStack {
-                                    Text(activity)
+                                    Text(activity).bold()
                                     Spacer()
                                     Text(timeString(seconds: time))
                                 }
@@ -29,9 +31,10 @@ struct LogView: View {
                         }
                     }
                 }
+                .listRowSeparator(.hidden)
             }
-            .navigationTitle("Daily Log")
-            .navigationBarItems(trailing: Button("Close") {
+            .listStyle(PlainListStyle())
+            .navigationBarItems(trailing: Button("close") {
                 presentationMode.wrappedValue.dismiss()
             })
         }

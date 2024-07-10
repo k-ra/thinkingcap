@@ -5,59 +5,90 @@
 //  Created by kyra on 7/9/24.
 //
 
-
 import Foundation
-
 import SwiftUI
 
 struct InitialSetupView: View {
     @ObservedObject var appState: AppState
-    @State private var currentSetupStep = 0
+    @State private var isChoosingCharacter = true
+    @State private var currentActivityIndex = 0
+    
+    let columns = Array(repeating: GridItem(.flexible()), count: 4)
     
     var body: some View {
         VStack {
-            Text("which hat for which...")
-                .padding()
+            if isChoosingCharacter {
+                characterSelectionView
+            } else if currentActivityIndex < appState.activities.count {
+                hatSelectionView
+            } 
+        }.font(.custom("EB Garamond", size: 20))
+    }
+    
+    var characterSelectionView: some View {
+        VStack {
             
-            if currentSetupStep < appState.activities.count {
-                Text("choose your \(appState.activities[currentSetupStep]) cap:")
+            Text("welcome!!")
+                .padding()
+
+            Text("who are you? who will you be?")
+                .padding()
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(appState.allHats, id: \.self) { hat in
-                            Image(hat)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 100)
-                                .onTapGesture {
-                                    appState.selectedHats[appState.activities[currentSetupStep]] = hat
-                                    currentSetupStep += 1
-                                    if currentSetupStep == appState.activities.count {
-                                        appState.isFirstLaunch = false
-                                    }
-                                }
-                        }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 20) {
+                    ForEach(appState.allCharacters, id: \.self) { character in
+                        Image(character)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 150)
+                            .onTapGesture {
+                                appState.selectedCharacter = character
+                                isChoosingCharacter = false
+                            }
                     }
                 }
-                .frame(height: 120)
-                
-                Text("choose your character:")
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(appState.allCharacters, id: \.self) { character in
-                            Image(character)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 100)
-                                .onTapGesture {
-                                    appState.selectedCharacter = character
-                                }
-                        }
+                .padding()
+            }
+            
+            Text("-->")
+                .padding()
+        }
+    }
+    
+    var hatSelectionView: some View {
+        VStack {
+            Spacer()
+            Text("choose your ") +
+            Text(appState.activities[currentActivityIndex])
+                .fontWeight(.bold) +
+            Text(" cap")
+            
+            Spacer()
+            ScrollView {
+                LazyVGrid(columns:[GridItem(.adaptive(minimum: 100))]) {
+                    ForEach(appState.allHats, id: \.self) { hat in
+                        Image(hat)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 100)
+                            .onTapGesture {
+                                appState.selectedHats[appState.activities[currentActivityIndex]] = hat
+                                moveToNextActivity()
+                            }
                     }
                 }
-                .frame(height: 120)
+                .padding()
+                .font(.custom("EB Garamond", size: 20))
             }
         }
     }
+    
+    private func moveToNextActivity() {
+            currentActivityIndex += 1
+            if currentActivityIndex >= appState.activities.count {
+                // All activities completed, automatically finish setup
+                appState.isFirstLaunch = false
+            }
+        }
 }

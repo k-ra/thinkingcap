@@ -42,11 +42,11 @@ class AppState: ObservableObject {
     
     let activities = ["thinking", "reading", "working", "creating"]
     let allHats = ["hat1", "hat2", "hat3", "hat4", "hat5", "hat6", "hat7","hat8","hat9","hat10","hat11", "hat12","hat13"]
-    let allCharacters = ["cutie", "cutie2", "cutie3","cutie4"]
+    let allCharacters = ["cutie", "cutie2", "cutie3", "cutie4"]
     
     init() {
-        
         self.isFirstLaunch = !UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+//        self.isFirstLaunch = true //for testing
         if let savedHats = UserDefaults.standard.object(forKey: "selectedHats") as? Data,
            let decodedHats = try? JSONDecoder().decode([String: String].self, from: savedHats) {
             self.selectedHats = decodedHats

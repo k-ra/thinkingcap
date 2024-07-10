@@ -14,6 +14,9 @@ struct HatPickerView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
+        Spacer()
+        Text("choose a new hat!!")
+            .font(.custom("EB Garamond", size: 20))
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
@@ -29,7 +32,7 @@ struct HatPickerView: View {
                     }
                 }
             }
-            .navigationTitle("Choose a Hat for \(activity)")
+            .listStyle(PlainListStyle())
             .navigationBarItems(trailing: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             })

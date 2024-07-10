@@ -15,29 +15,35 @@ struct ClosetView: View {
     @State private var showingHatPicker = false
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(appState.activities, id: \.self) { activity in
-                    HStack {
-                        Text(activity)
-                        Spacer()
-                        Image(appState.selectedHats[activity] ?? "defaultHat")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 50)
-                    }
-                    .onTapGesture {
-                        selectedActivity = activity
-                        showingHatPicker = true
+        VStack{
+            Text("my current closet")
+                .font(.custom("EB Garamond", size:25)).bold()
+            NavigationView {
+                
+                List {
+                    ForEach(appState.activities, id: \.self) { activity in
+                        HStack {
+                            Text(activity)
+                            Spacer()
+                            Image(appState.selectedHats[activity] ?? "defaultHat")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 50)
+                        }
+                        .onTapGesture {
+                            selectedActivity = activity
+                            showingHatPicker = true
+                        }
                     }
                 }
+                .listStyle(PlainListStyle())
+                .navigationBarItems(trailing: Button("done") {
+                    presentationMode.wrappedValue.dismiss()
+                })
+                .sheet(isPresented: $showingHatPicker, content: {
+                    HatPickerView(appState: appState, activity: selectedActivity ?? "")
+                })
             }
-            .navigationBarItems(trailing: Button("Done") {
-                presentationMode.wrappedValue.dismiss()
-            })
-            .sheet(isPresented: $showingHatPicker, content: {
-                HatPickerView(appState: appState, activity: selectedActivity ?? "")
-            })
         }
     }
 }

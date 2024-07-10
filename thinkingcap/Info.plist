@@ -7,5 +7,12 @@
 		<string>EBGaramond-Italic-VariableFont_wght.ttf</string>
 		<string>EBGaramond-VariableFont_wght.tff</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>landing</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>

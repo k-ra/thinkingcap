@@ -27,11 +27,21 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 Text(appState.currentActivity)
-                    .padding().bold()
+                    .padding().bold().textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                 
-                Image(appState.selectedHats[appState.currentActivity] ?? "defaultHat").resizable().scaledToFit().frame(height: 60)
+
                 
-                Image("cutie").resizable().scaledToFit().frame(height: 160)
+                if isWearing{
+                    Text(timeString(time: elapsed)).padding()
+                    Image(appState.selectedHats[appState.currentActivity] ?? "defaultHat").resizable().scaledToFit().frame(height: 60)
+                }
+                else {
+                    Image(appState.selectedHats[appState.currentActivity] ?? "defaultHat").resizable().scaledToFit().frame(height: 60)
+                    Text("00:00").padding().hidden()
+                }
+                
+                    
+                Image(appState.selectedCharacter).resizable().scaledToFit().frame(height: 160)
                 
                 Spacer()
                 
@@ -43,24 +53,14 @@ struct ContentView: View {
                         self.stopTimer()
                     }
                 }) {
-                    Text(isWearing ? "take off" : "put on!")
-                        .padding(5)
-                        .foregroundColor(.black)
-                        .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.black, lineWidth: 1)
-                            )
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                }
+                    Text("< ") +
+                    Text(isWearing ? "take off" : "put on!") +
+                    Text(" >")
+                        
+                }.foregroundColor(Color.black)
             
                 Spacer()
-                
-                if isWearing {
-                    Text(timeString(time: elapsed))
-                        .padding()
-                } else {
-                    Text("00:00").padding().hidden()
-                }
+
                 Button(action: { showingMenu = true }) {
                     Text("change activity").italic()
                 }
@@ -75,7 +75,7 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "hanger")
                 }
-            )
+            ).foregroundColor(.black)
             
             .sheet(isPresented: $showingCloset) {
                 ClosetView(appState: appState)
@@ -136,40 +136,6 @@ struct MenuView2: View {
                 showingMenu = false
             }
             )
-        }
-    }
-}
-
-struct MenuView: View {
-    @ObservedObject var appState: AppState
-    @Binding var showingMenu: Bool
-    @State private var showingDailyLog = false
-    
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(appState.activities, id: \.self) { activity in
-                    Button(action: {
-                        appState.currentActivity = activity
-                        showingMenu = false
-                    }) {
-                        Text(activity)
-                    }
-                }
-                
-                Button(action: {
-                    showingDailyLog = true
-                }) {
-                    Text("Daily Log")
-                }
-            }
-            .navigationTitle("Menu")
-            .navigationBarItems(trailing: Button("Close") {
-                showingMenu = false
-            })
-        }
-        .sheet(isPresented: $showingDailyLog) {
-            LogView(appState: appState)
         }
     }
 }
