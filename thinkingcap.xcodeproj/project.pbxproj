@@ -14,6 +14,7 @@
 		4D01392C2C3DD06A005495D7 /* thinkingcapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01392B2C3DD06A005495D7 /* thinkingcapTests.swift */; };
 		4D0139362C3DD06A005495D7 /* thinkingcapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0139352C3DD06A005495D7 /* thinkingcapUITests.swift */; };
 		4D0139382C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0139372C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift */; };
+		4D8063E22C3F3681001438B4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D8063E12C3F3681001438B4 /* Launch Screen.storyboard */; };
 		4DB95A8E2C3E189400F428E9 /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A8D2C3E189400F428E9 /* ClosetView.swift */; };
 		4DB95A902C3E1A3000F428E9 /* InitialSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A8F2C3E1A3000F428E9 /* InitialSetupView.swift */; };
 		4DB95A922C3E1A5B00F428E9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A912C3E1A5B00F428E9 /* AppState.swift */; };
@@ -51,6 +52,7 @@
 		4D0139312C3DD06A005495D7 /* thinkingcapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thinkingcapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0139352C3DD06A005495D7 /* thinkingcapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thinkingcapUITests.swift; sourceTree = "<group>"; };
 		4D0139372C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thinkingcapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4D8063E12C3F3681001438B4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4DB95A8D2C3E189400F428E9 /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
 		4DB95A8F2C3E1A3000F428E9 /* InitialSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupView.swift; sourceTree = "<group>"; };
 		4DB95A912C3E1A5B00F428E9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4DB95A972C3E1ADC00F428E9 /* Info.plist */,
 				4D01391A2C3DD067005495D7 /* thinkingcapApp.swift */,
 				4D01391C2C3DD067005495D7 /* ContentView.swift */,
+				4D8063E12C3F3681001438B4 /* Launch Screen.storyboard */,
 				4DB95A8D2C3E189400F428E9 /* ClosetView.swift */,
 				4DB95A8F2C3E1A3000F428E9 /* InitialSetupView.swift */,
 				4DB95A932C3E1A6C00F428E9 /* LogView.swift */,
@@ -265,6 +268,7 @@
 				4D0139222C3DD069005495D7 /* Preview Assets.xcassets in Resources */,
 				4DB95A9B2C3E1B1300F428E9 /* EBGaramond-Italic-VariableFont_wght.ttf in Resources */,
 				4DB95A9C2C3E1B1300F428E9 /* EBGaramond-VariableFont_wght.ttf in Resources */,
+				4D8063E22C3F3681001438B4 /* Launch Screen.storyboard in Resources */,
 				4D01391F2C3DD069005495D7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +470,8 @@
 				INFOPLIST_FILE = thinkingcap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,6 +501,8 @@
 				INFOPLIST_FILE = thinkingcap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
