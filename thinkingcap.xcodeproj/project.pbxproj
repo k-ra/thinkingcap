@@ -14,6 +14,13 @@
 		4D01392C2C3DD06A005495D7 /* thinkingcapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D01392B2C3DD06A005495D7 /* thinkingcapTests.swift */; };
 		4D0139362C3DD06A005495D7 /* thinkingcapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0139352C3DD06A005495D7 /* thinkingcapUITests.swift */; };
 		4D0139382C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0139372C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift */; };
+		4DB95A8E2C3E189400F428E9 /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A8D2C3E189400F428E9 /* ClosetView.swift */; };
+		4DB95A902C3E1A3000F428E9 /* InitialSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A8F2C3E1A3000F428E9 /* InitialSetupView.swift */; };
+		4DB95A922C3E1A5B00F428E9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A912C3E1A5B00F428E9 /* AppState.swift */; };
+		4DB95A942C3E1A6C00F428E9 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A932C3E1A6C00F428E9 /* LogView.swift */; };
+		4DB95A962C3E1A8300F428E9 /* HatPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB95A952C3E1A8300F428E9 /* HatPickerView.swift */; };
+		4DB95A9B2C3E1B1300F428E9 /* EBGaramond-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DB95A982C3E1B1300F428E9 /* EBGaramond-Italic-VariableFont_wght.ttf */; };
+		4DB95A9C2C3E1B1300F428E9 /* EBGaramond-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DB95A992C3E1B1300F428E9 /* EBGaramond-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,14 @@
 		4D0139312C3DD06A005495D7 /* thinkingcapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thinkingcapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D0139352C3DD06A005495D7 /* thinkingcapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thinkingcapUITests.swift; sourceTree = "<group>"; };
 		4D0139372C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thinkingcapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4DB95A8D2C3E189400F428E9 /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
+		4DB95A8F2C3E1A3000F428E9 /* InitialSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupView.swift; sourceTree = "<group>"; };
+		4DB95A912C3E1A5B00F428E9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		4DB95A932C3E1A6C00F428E9 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		4DB95A952C3E1A8300F428E9 /* HatPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatPickerView.swift; sourceTree = "<group>"; };
+		4DB95A972C3E1ADC00F428E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4DB95A982C3E1B1300F428E9 /* EBGaramond-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		4DB95A992C3E1B1300F428E9 /* EBGaramond-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EBGaramond-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +109,16 @@
 		4D0139192C3DD067005495D7 /* thinkingcap */ = {
 			isa = PBXGroup;
 			children = (
+				4DB95A972C3E1ADC00F428E9 /* Info.plist */,
 				4D01391A2C3DD067005495D7 /* thinkingcapApp.swift */,
 				4D01391C2C3DD067005495D7 /* ContentView.swift */,
+				4DB95A8D2C3E189400F428E9 /* ClosetView.swift */,
+				4DB95A8F2C3E1A3000F428E9 /* InitialSetupView.swift */,
+				4DB95A932C3E1A6C00F428E9 /* LogView.swift */,
+				4DB95A952C3E1A8300F428E9 /* HatPickerView.swift */,
+				4DB95A912C3E1A5B00F428E9 /* AppState.swift */,
 				4D01391E2C3DD069005495D7 /* Assets.xcassets */,
+				4DB95A9A2C3E1B1300F428E9 /* fonts */,
 				4D0139202C3DD069005495D7 /* Preview Content */,
 			);
 			path = thinkingcap;
@@ -125,6 +147,15 @@
 				4D0139372C3DD06A005495D7 /* thinkingcapUITestsLaunchTests.swift */,
 			);
 			path = thinkingcapUITests;
+			sourceTree = "<group>";
+		};
+		4DB95A9A2C3E1B1300F428E9 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4DB95A982C3E1B1300F428E9 /* EBGaramond-Italic-VariableFont_wght.ttf */,
+				4DB95A992C3E1B1300F428E9 /* EBGaramond-VariableFont_wght.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +263,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0139222C3DD069005495D7 /* Preview Assets.xcassets in Resources */,
+				4DB95A9B2C3E1B1300F428E9 /* EBGaramond-Italic-VariableFont_wght.ttf in Resources */,
+				4DB95A9C2C3E1B1300F428E9 /* EBGaramond-VariableFont_wght.ttf in Resources */,
 				4D01391F2C3DD069005495D7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D01391D2C3DD067005495D7 /* ContentView.swift in Sources */,
+				4DB95A942C3E1A6C00F428E9 /* LogView.swift in Sources */,
+				4DB95A922C3E1A5B00F428E9 /* AppState.swift in Sources */,
 				4D01391B2C3DD067005495D7 /* thinkingcapApp.swift in Sources */,
+				4DB95A962C3E1A8300F428E9 /* HatPickerView.swift in Sources */,
+				4DB95A8E2C3E189400F428E9 /* ClosetView.swift in Sources */,
+				4DB95A902C3E1A3000F428E9 /* InitialSetupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +463,7 @@
 				DEVELOPMENT_TEAM = NC5QN3Y4H6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = thinkingcap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +493,7 @@
 				DEVELOPMENT_TEAM = NC5QN3Y4H6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = thinkingcap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
